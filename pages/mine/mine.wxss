@@ -13,7 +13,7 @@
 }
 
 .userinfo-nickname {
-  color: white;
+  color: #aaa;
 }
 
 .usermotto {
@@ -21,14 +21,5 @@
 }
 
 .topview{
-  width: 100%;
-  height: 150px;
-  background-color: #aaa;
-  display: flex;
-  flex-direction: row;
-}
-
-.topview-item{
-  display: flex;
-  flex: 1;
+  
 }
