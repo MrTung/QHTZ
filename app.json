@@ -7,7 +7,7 @@
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#f00",
-    "navigationBarTitleText": "谦恒投资",
+    "navigationBarTitleText": "谦恒营销",
     "navigationBarTextStyle": "white"
   },
   "tabBar": {
@@ -15,7 +15,6 @@
     "selectedColor": "#e3211a",
     "borderStyle": "black",
     "backgroundColor": "#fff",
-    "box-shadow": "0 0 6px 0",
     "list": [
       {
         "pagePath": "pages/index/index",

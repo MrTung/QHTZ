@@ -25,22 +25,22 @@
 
   <view class='shortcut-container'>
       <view class="shortcut-view">
-        <image class="shortcut-icon" mode="aspectFill" src="https://image.toolmall.com/image/toolmallPc/recommend/image/2017/5/38719bab-ee6a-4ac0-9926-fd013ea22be3-source.png"></image>
+        <image class="shortcut-icon" mode="aspectFill" src="/resource/image/ziyuan_1.png"></image>
         <text class="shortcut-title">我的客户</text>
       </view>
 
        <view class="shortcut-view">
-        <image class="shortcut-icon" mode="aspectFill" src="https://image.toolmall.com/image/toolmallPc/recommend/image/2017/5/38719bab-ee6a-4ac0-9926-fd013ea22be3-source.png"></image>
+        <image class="shortcut-icon" mode="aspectFill" src="/resource/image/ziyuan.png"></image>
         <text class="shortcut-title">我的订单</text>
       </view>
 
        <view class="shortcut-view">
-        <image class="shortcut-icon" mode="aspectFill" src="https://image.toolmall.com/image/toolmallPc/recommend/image/2017/5/38719bab-ee6a-4ac0-9926-fd013ea22be3-source.png"></image>
+        <image class="shortcut-icon" mode="aspectFill" src="/resource/image/caiwubaobiao.png"></image>
         <text class="shortcut-title">财务管理</text>
       </view>
 
        <view class="shortcut-view">
-        <image class="shortcut-icon" mode="aspectFill" src="https://image.toolmall.com/image/toolmallPc/recommend/image/2017/5/38719bab-ee6a-4ac0-9926-fd013ea22be3-source.png"></image>
+        <image class="shortcut-icon" mode="aspectFill" src="/resource/image/yaoqingmatianchong.png"></image>
         <text class="shortcut-title">邀请别人</text>
       </view>
   </view>

@@ -47,6 +47,8 @@
   height: 120rpx;
   margin: 20rpx;
   border-radius: 50%;
+  display:block; 
+  overflow:hidden; 
 }
 
 .userinfo-nickname {
