@@ -1,9 +1,47 @@
 <!--index.wxml-->
 <view class="container">
   <view class="topview">
-     <text class="topview-item">今日收益:100</text>
-     <text class="topview-item">本月收益:100</text>
-     <text class="topview-item">总收益:100</text>
+
+    <view class="topview-item">   
+      <text class="topview-item-money">100</text>
+      <text class="topview-item">今日收益</text>
+    </view>
+
+    <view class="topview-item">   
+      <text class="topview-item-money">100</text>
+      <text class="topview-item">本月收益</text>
+    </view>
+
+    <view class="topview-item">   
+      <text class="topview-item-money">100</text>
+      <text class="topview-item">总收益</text>
+    </view>
+
   </view>
-  
+
+   <view class="middle-view">   
+      <text class="middleview-title">服务工具</text>
+  </view>
+
+  <view class='shortcut-container'>
+      <view class="shortcut-view">
+        <image class="shortcut-icon" mode="aspectFill" src="https://image.toolmall.com/image/toolmallPc/recommend/image/2017/5/38719bab-ee6a-4ac0-9926-fd013ea22be3-source.png"></image>
+        <text class="shortcut-title">我的客户</text>
+      </view>
+
+       <view class="shortcut-view">
+        <image class="shortcut-icon" mode="aspectFill" src="https://image.toolmall.com/image/toolmallPc/recommend/image/2017/5/38719bab-ee6a-4ac0-9926-fd013ea22be3-source.png"></image>
+        <text class="shortcut-title">我的订单</text>
+      </view>
+
+       <view class="shortcut-view">
+        <image class="shortcut-icon" mode="aspectFill" src="https://image.toolmall.com/image/toolmallPc/recommend/image/2017/5/38719bab-ee6a-4ac0-9926-fd013ea22be3-source.png"></image>
+        <text class="shortcut-title">财务管理</text>
+      </view>
+
+       <view class="shortcut-view">
+        <image class="shortcut-icon" mode="aspectFill" src="https://image.toolmall.com/image/toolmallPc/recommend/image/2017/5/38719bab-ee6a-4ac0-9926-fd013ea22be3-source.png"></image>
+        <text class="shortcut-title">邀请别人</text>
+      </view>
+  </view>
 </view>

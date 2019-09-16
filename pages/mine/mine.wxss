@@ -1,25 +1,173 @@
-/**index.wxss**/
-.userinfo {
+.container {
+  height: 100%;
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
+  position: relative;
+}
+
+.userinfo {
+  display: flex;
+  flex-direction: row;
+  margin: 25rpx;
+  width: 100% - 50rpx;
+  border-radius: 10rpx;
+  height: 220rpx;
   align-items: center;
 }
 
+.bgd-image {
+  position: absolute;
+  top: 0rpx;
+  margin: 25rpx;
+  width: 94%;
+  border-radius: 10rpx;
+  height: 220rpx;
+  z-index: -1;
+}
+
+.badgeview {
+  display: flex;
+  position: absolute;
+  top: 10rpx;
+   opacity: 0; 
+  right: 10rpx;
+  border-radius: 50%;
+  width: 30rpx;
+  height: 30rpx;
+  background-color: red;
+  font-size: 20rpx;
+  color: white;
+  align-items: center;
+  justify-content: center;
+}
+
 .userinfo-avatar {
-  width: 128rpx;
-  height: 128rpx;
+  width: 120rpx;
+  height: 120rpx;
   margin: 20rpx;
   border-radius: 50%;
 }
 
 .userinfo-nickname {
-  color: #aaa;
+  /* margin-top: 20rpx; */
+  color: #ddd;
+  font-size: 25rpx;
+  padding: 0 20rpx;
 }
 
-.usermotto {
-  margin-top: 200px;
+.listcell {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
-.topview{
-  
+.address-box {
+  display: flex;
+  flex-direction: row;
+  box-sizing: border-box;
+  padding-right: 30rpx;
+  width: 100%;
+  margin-bottom: 2rpx;
+  font-size: 28rpx;
+  color: #000;
+  height: 100rpx;
+  line-height: 100rpx;
+  background-color: white;
+  position: relative;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.address-box .arrow {
+  /* background: url(https://cdn.it120.cc/images/weappshop/arrow-right.png) no-repeat 675rpx center;
+  background-size: 15rpx auto;
+  text-align: left; */
+}
+
+.contactbtn {
+  position: absolute;
+  opacity: 0;
+  width: 100%;
+  height: 100rpx;
+  border: none;
+  top: 0rpx;
+}
+
+.button[class="contactbtn"]::after {
+  border: 0;
+}
+
+.right-text {
+  text-align: right;
+  font-size: 24rpx;
+  color: #666;
+  padding-left: 20rpx;
+}
+
+.rowArrow {
+  height: 55rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff;
+  padding: 20rpx;
+  margin-top: 1px;
+}
+
+.row-label {
+  font-size: 28rpx;
+  color: #000;
+}
+
+.order-box {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 190rpx;
+  background-color: white;
+}
+
+.topview {
+  padding-left: 30rpx;
+  padding-right: 30rpx;
+  width: 92%;
+  height: 70rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-bottom: solid 1rpx #eee;
+}
+
+.arrow {
+  display: flex;
+  flex-direction: row;
+}
+
+.bottomview {
+  width: 100%;
+  height: 100rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.iconview {
+  width: 100rpx;
+  height: 100rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.address-box .badgeview{
+  right:auto;
+  left:195rpx;
+}
+.coupon-box  .badgeview{
+  right:auto;
+  left:170rpx;
 }
