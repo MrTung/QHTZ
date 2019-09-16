@@ -1,7 +1,7 @@
 <view class="container" scroll-y>
   <view class="userinfo">
-    <image wx:if="{{tm_userInfo && tm_userInfo.avatar}}" class="userinfo-avatar" src="{{ userInfo.avatar }}" background-size="cover"></image>
-    <text class="userinfo-nickname">用户名:{{tm_userInfo.username}}</text>
+    <image wx:if="{{userInfo && userInfo.avatarUrl}}" class="userinfo-avatar" src="{{ userInfo.avatarUrl }}" background-size="cover"></image>
+    <text class="userinfo-nickname">{{userInfo.nickName}}</text>
   </view>
   <image class='bgd-image' src='../../resource/image/beijingtu.png'></image>
 
@@ -11,7 +11,7 @@
         <view style='opacity: {{(!myPageData.memberFavoriteProductCount || myPageData.memberFavoriteProductCount < 1) ? 0 :1}};'  class='badgeview'>{{myPageData.memberFavoriteProductCount}}</view>
         <view style='width:30rpx;height:1rpx;'> </view>
         <image src="/resource/image/myself/my_favorite.png" style="width: 50rpx; height: 50rpx;margin-right:10rpx" />
-        <view class="arrow">我的收藏 </view>
+        <view class="arrow">个人信息 </view>
       </view>
       <image src="/resource/image/arrow-right.png" style="width: 14rpx; height: 20rpx;margin-left:10rpx" />
     </view>
@@ -20,7 +20,7 @@
         <view style='opacity: {{(!myPageData.couponCodeCount || myPageData.couponCodeCount < 1) ? 0 :1}};'  class='badgeview'>{{myPageData.couponCodeCount}}</view>
         <view style='width:30rpx;height:1rpx;'></view>
         <image src="/resource/image/myself/my_coupon.png" style="width: 50rpx; height: 50rpx;margin-right:10rpx" />
-        <view class="arrow">优惠券</view>
+        <view class="arrow">实名认证</view>
       </view>
       <image src="/resource/image/arrow-right.png" style="width: 14rpx; height: 20rpx;margin-left:10rpx" />
     </view>
@@ -28,7 +28,7 @@
       <view style=' display: flex;flex-direction: row;align-items: center;'>
         <view style='width:30rpx;height:1rpx;'> </view>
         <image src="/resource/image/myself/my_address.png" style="width: 50rpx; height: 50rpx;margin-right:10rpx" />
-        <view class="arrow">收货地址</view>
+        <view class="arrow">账号与安全</view>
       </view>
       <image src="/resource/image/arrow-right.png" style="width: 14rpx; height: 20rpx;margin-left:10rpx" />
     </view>

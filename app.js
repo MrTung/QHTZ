@@ -12,6 +12,14 @@ App({
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
       }
     })
+
+
+    wx.getUserInfo({
+      success: res => {
+        this.globalData.userInfo = res.userInfo
+      }
+    })
+
     // 获取用户信息
     wx.getSetting({
       success: res => {
