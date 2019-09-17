@@ -24,14 +24,14 @@
       </view>
       <image src="/resource/image/arrow-right.png" style="width: 14rpx; height: 20rpx;margin-left:10rpx" />
     </view>
-    <view class='address-box' bindtap="addressList">
+    <!-- <view class='address-box' bindtap="addressList">
       <view style=' display: flex;flex-direction: row;align-items: center;'>
         <view style='width:30rpx;height:1rpx;'> </view>
         <image src="/resource/image/myself/my_address.png" style="width: 50rpx; height: 50rpx;margin-right:10rpx" />
         <view class="arrow">账号与安全</view>
       </view>
       <image src="/resource/image/arrow-right.png" style="width: 14rpx; height: 20rpx;margin-left:10rpx" />
-    </view>
+    </view> -->
    
   </view>
 
