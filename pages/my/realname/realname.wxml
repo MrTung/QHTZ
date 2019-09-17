@@ -1,0 +1,23 @@
+<view class="container" scroll-y>
+
+    <view class='address-box' bindtap="favoriteList" style='margin-top:15rpx;'>
+      <view class='rowitem'>
+        <view class="arrow">真实姓名 </view>
+         <text>{{name}}</text>
+      </view>
+    </view>
+    <view class='address-box coupon-box' bindtap="couponList">
+      <view class='rowitem'>
+        <view class="arrow">身份证号</view>
+         <text>{{cardid}}</text>
+      </view>
+    </view>
+
+    <view class='imgview'>
+      <image  class="image" src="{{img1}}" mode="aspectFit" data-idx="1" bindtap="chooseImage"></image>
+      <image  class="image" src="{{img2}}" mode="aspectFit" data-idx="2" bindtap="chooseImage"></image>
+    </view>
+   
+    <button type="warn" class='button' bindtap="submitForm"> 确认提交 </button>
+
+</view>

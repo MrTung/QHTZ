@@ -3,10 +3,10 @@
     <open-data type="userAvatarUrl" class="userinfo-avatar" background-size="cover"></open-data>
     <open-data type="userNickName" class="userinfo-nickname"></open-data>
   </view>
-  <image class='bgd-image' src='../../resource/image/beijingtu.png'></image>
+  <image class='bgd-image' src='../../../resource/image/beijingtu.png'></image>
 
   <view class='listcell'>
-    <view class='address-box' bindtap="favoriteList" style='margin-top:15rpx;'>
+    <view class='address-box' bindtap="myinfo" style='margin-top:15rpx;'>
       <view style=' display: flex;flex-direction: row;align-items: center;'>
         <view style='opacity: {{(!myPageData.memberFavoriteProductCount || myPageData.memberFavoriteProductCount < 1) ? 0 :1}};'  class='badgeview'>{{myPageData.memberFavoriteProductCount}}</view>
         <view style='width:30rpx;height:1rpx;'> </view>
@@ -15,7 +15,7 @@
       </view>
       <image src="/resource/image/arrow-right.png" style="width: 14rpx; height: 20rpx;margin-left:10rpx" />
     </view>
-    <view class='address-box coupon-box' bindtap="couponList">
+    <view class='address-box coupon-box' bindtap="realname">
       <view style=' display: flex;flex-direction: row;align-items: center;'>
         <view style='opacity: {{(!myPageData.couponCodeCount || myPageData.couponCodeCount < 1) ? 0 :1}};'  class='badgeview'>{{myPageData.couponCodeCount}}</view>
         <view style='width:30rpx;height:1rpx;'></view>

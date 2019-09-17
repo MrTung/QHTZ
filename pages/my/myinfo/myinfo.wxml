@@ -1,0 +1,36 @@
+<view class="container" scroll-y>
+  <view class='listcell'>
+    <view class='address-box' bindtap="favoriteList" style='margin-top:15rpx;'>
+      <view class='rowitem'>
+        <view class="arrow">真实姓名 </view>
+        <view class="arrow">张三 </view>
+      </view>
+    </view>
+    <view class='address-box coupon-box' bindtap="couponList">
+      <view class='rowitem'>
+        <view class="arrow">微信号</view>
+         <view class="arrow">dongxw0106 </view>
+      </view>
+      <image src="/resource/image/arrow-right.png" style="width: 14rpx; height: 20rpx;margin-left:10rpx" />
+    </view>
+    <view class='address-box coupon-box' bindtap="couponList">
+      <view class='rowitem'>
+        <view class="arrow">银行账户</view>
+        
+      </view>
+      <image src="/resource/image/arrow-right.png" style="width: 14rpx; height: 20rpx;margin-left:10rpx" />
+    </view>
+    <view class='address-box coupon-box' bindtap="couponList">
+      <view class='rowitem'>
+        <view class="arrow">银行名称</view>
+      </view>
+      <image src="/resource/image/arrow-right.png" style="width: 14rpx; height: 20rpx;margin-left:10rpx" />
+    </view>
+     <view class='address-box coupon-box' bindtap="couponList">
+      <view class='rowitem'>
+        <view class="arrow">开户行</view>
+      </view>
+      <image src="/resource/image/arrow-right.png" style="width: 14rpx; height: 20rpx;margin-left:10rpx" />
+    </view>
+  </view>
+</view>
