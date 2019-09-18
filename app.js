@@ -1,27 +1,42 @@
+const util = require('./utils/util.js');
+const tmUrl = require('./utils/tmUrl.js');
+
 
 App({
+  globalData: {
+   userInfo:null,
+  },
   onLaunch: function () {
     // 展示本地存储能力
     var logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
 
-    // 登录         // 发送 res.code 到后台换取 openId, sessionKey, unionId
+
+    let that = this;
+    // 发送 res.code 到后台换取 openId, sessionKey, unionId
     wx.login({
       success: function (res) {
         console.log(res)
         if (res.code) {
-          //发起网络请求
-          wx.request({
-            url: 'https://api.weixin.qq.com/sns/jscode2session?appid=wx8f7d21ab0675df05&secret=aea9d8ebbb657bb90f95b3a3cd806bd3&js_code=JSCODE&grant_type=authorization_code',
+           wx.request({
+            url: tmUrl.url_getuserinfo,
             data: {
-              appid: 'wx8f7d21ab0675df05',
-              secret: 'aea9d8ebbb657bb90f95b3a3cd806bd3',
-              js_code: res.code,
-              grant_type: 'authorization_code'
+              code: res.code,
             },
             success(v) {
               console.log(v)
+
+              wx.setStorage({
+                key: 'userinfo',
+                data: v.data.data[0],
+              });
+
+              that.globalData.userInfo = v.data.data[0];
+              console.log('设置userinfo成功');
+
+              
+
             }
           })
         } else {
@@ -30,9 +45,6 @@ App({
       }
     });
 
-
   },
-  globalData: {
-    userInfo: null
-  }
+ 
 })

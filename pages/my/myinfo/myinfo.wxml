@@ -1,36 +1,41 @@
 <view class="container" scroll-y>
-  <view class='listcell'>
-    <view class='address-box' bindtap="favoriteList" style='margin-top:15rpx;'>
+    <view class='address-box coupon-box' >
       <view class='rowitem'>
-        <view class="arrow">真实姓名 </view>
-        <view class="arrow">张三 </view>
+        <view class="arrow">手机号</view>
+          <input  placeholder='请输入手机号' disabled='{{userinfo.userId}}' name="mobile"  type="number" value="{{mobile}}" style='text-align:right'  bindinput="bindKeyInput" />
       </view>
+      <button wx:if="{{!userinfo.userId}}" type="warn" class='button' bindtap="getcode"> 发送验证码 </button>
     </view>
-    <view class='address-box coupon-box' bindtap="couponList">
-      <view class='rowitem'>
-        <view class="arrow">微信号</view>
-         <view class="arrow">dongxw0106 </view>
+    <form bindsubmit="formSubmit">
+      <view class='address-box coupon-box' >
+        <view class='rowitem'>
+          <view class="arrow">微信号</view>
+            <input  placeholder='请输入微信号' name="wxNum"  value="{{wxNum}}" style='text-align:right'   />
+        </view>
       </view>
-      <image src="/resource/image/arrow-right.png" style="width: 14rpx; height: 20rpx;margin-left:10rpx" />
-    </view>
-    <view class='address-box coupon-box' bindtap="couponList">
-      <view class='rowitem'>
-        <view class="arrow">银行账户</view>
-        
+      <view class='address-box coupon-box' >
+        <view class='rowitem'>
+          <view class="arrow">请输入银行账户</view>
+          <input  placeholder='请输入银行账户' name="bankNo"  value="{{bankNo}}" style='text-align:right'   />
+        </view>
       </view>
-      <image src="/resource/image/arrow-right.png" style="width: 14rpx; height: 20rpx;margin-left:10rpx" />
-    </view>
-    <view class='address-box coupon-box' bindtap="couponList">
-      <view class='rowitem'>
-        <view class="arrow">银行名称</view>
+      <view class='address-box coupon-box' >
+        <view class='rowitem'>
+          <view class="arrow">请输入银行名称</view>
+           <input  placeholder='请输入银行名称' name="bankName"  value="{{bankName}}" style='text-align:right'  />
+        </view>
       </view>
-      <image src="/resource/image/arrow-right.png" style="width: 14rpx; height: 20rpx;margin-left:10rpx" />
-    </view>
-     <view class='address-box coupon-box' bindtap="couponList">
-      <view class='rowitem'>
-        <view class="arrow">开户行</view>
+      <view class='address-box coupon-box' >
+        <view class='rowitem'>
+          <view class="arrow">请输入开户行</view>
+           <input  placeholder='请输入开户行' name="bankSubName"  value="{{bankSubName}}" style='text-align:right' />
+        </view>
       </view>
-      <image src="/resource/image/arrow-right.png" style="width: 14rpx; height: 20rpx;margin-left:10rpx" />
-    </view>
-  </view>
+    <button type="warn" class="save-btn" formType="submit">保存</button>
+  </form>
+
+  <modal hidden="{{hiddenmodalput}}" title="请输入验证码" confirm-text="提交" cancel-text="取消" bindcancel="cancel" bindconfirm="confirm">
+      <input type='text' placeholder="请输入手机验证码"   bindinput="bindCodeInput"/>
+  </modal>
+
 </view>
