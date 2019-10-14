@@ -1,13 +1,43 @@
-const formatTime = date => {
-  const year = date.getFullYear()
-  const month = date.getMonth() + 1
-  const day = date.getDate()
-  const hour = date.getHours()
-  const minute = date.getMinutes()
-  const second = date.getSeconds()
+const app = getApp()
+const tmUrl = require('../utils/tmUrl.js');
 
-  return [year, month, day].map(formatNumber).join('/') + ' ' + [hour, minute, second].map(formatNumber).join(':')
+
+/**
+ * 时间戳转化为年 月 日 时 分 秒
+ * number: 传入时间戳
+ * format：返回格式，支持自定义，但参数必须与formateArr里保持一致
+*/
+function formatTime(number, format) {
+
+  var formateArr = ['Y', 'M', 'D', 'h', 'm', 's'];
+  var returnArr = [];
+
+  var date = new Date(number);
+  returnArr.push(date.getFullYear());
+  returnArr.push(formatNumber(date.getMonth() + 1));
+  returnArr.push(formatNumber(date.getDate()));
+
+  returnArr.push(formatNumber(date.getHours()));
+  returnArr.push(formatNumber(date.getMinutes()));
+  returnArr.push(formatNumber(date.getSeconds()));
+
+  for (var i in returnArr) {
+    format = format.replace(formateArr[i], returnArr[i]);
+  }
+  return format;
 }
+
+
+// const formatTime = date => {
+//   const year = date.getFullYear()
+//   const month = date.getMonth() + 1
+//   const day = date.getDate()
+//   const hour = date.getHours()
+//   const minute = date.getMinutes()
+//   const second = date.getSeconds()
+
+//   return [year, month, day].map(formatNumber).join('/') + ' ' + [hour, minute, second].map(formatNumber).join(':')
+// }
 
 const formatNumber = n => {
   n = n.toString()
@@ -352,23 +382,39 @@ function htmlDecode(str){
   return s;
 }
 
+// //更新用户信息
+function getuserinfo(){
+//   wx.login({
+//     success: function (res) {
+//       console.log(res)
+//       if (res.code) {
+//         wx.request({
+//           url: tmUrl.url_getuserinfo,
+//           data: {
+//             code: res.code,
+//           },
+//           success(v) {
+//             console.log(v)
 
+//             wx.setStorage({
+//               key: 'userinfo',
+//               data: v.data.data[0],
+//             });
 
-// 汪州 测试环境
-//var api_host = "http://192.168.2.160:8280/app/";
-
-// 沈华清 测试环境
-// var api_host = "http://192.168.2.188:8080/app/";
-
-// 145 测试环境
-// var api_host = "http://192.168.100.145:80/app/";
-
-// 正式环境
-// var api_host = "https://www.toolmall.com/app/";
-
-
+//             app.globalData.userInfo = v.data.data[0];
+//             console.log('设置userinfo成功');
+//           }
+//         })
+//       } else {
+//         console.log('登录失败！' + res.errMsg)
+//       }
+//     }
+//   });
+}
 
 module.exports = {
+  getuserinfo,
+
   clone,
 
   normallizePrdsImage,

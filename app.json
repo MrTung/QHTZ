@@ -4,7 +4,13 @@
     "pages/my/mine/mine",
     "pages/my/myinfo/myinfo",
     "pages/my/realname/realname",
-    "pages/logs/logs"
+    "pages/logs/logs",
+    "pages/order/order",
+    "pages/customer/customer",
+    "pages/invite/invite",
+    "pages/money/money",
+    "pages/moneydetail/moneydetail",
+    "pages/getmoney/getmoney"
   ],
   "window": {
     "backgroundTextStyle": "light",

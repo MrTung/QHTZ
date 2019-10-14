@@ -1,0 +1,34 @@
+<view class="topview">
+  <text class="money">￥{{totalMoney}}</text>
+  <view class="subtitle">账户余额:元</view>
+</view>
+
+<view class='listcell'>
+    <view class='address-box' bindtap="myinfo" style='margin-top:15rpx;'>
+      <view style=' display: flex;flex-direction: row;align-items: center;padding-left:30rpx'>
+        <view class="arrow">可提现余额(元) </view>
+      </view>
+      <view style=' display: flex;flex-direction: row;align-items: center;'>
+        <view class="arrow" style="font-size:35rpx;color:red;">￥{{unlockMoney}} </view>
+
+      </view>
+    </view>
+    <view class='address-box' bindtap="gotomoneydetail">
+      <view style=' display: flex;flex-direction: row;align-items: center;padding-left:30rpx'>
+        <view class="arrow">提现余额明细 </view>
+      </view>
+      <view style=' display: flex;flex-direction: row;align-items: center;'>
+        <image src="/resource/image/arrow-right.png" style="width: 14rpx; height: 20rpx;margin-left:10rpx" />
+      </view>
+    </view>
+    <view class='address-box' bindtap="gotomoneydetail">
+      <view style=' display: flex;flex-direction: row;align-items: center;padding-left:30rpx'>
+        <view class="arrow">账户余额明细</view>
+      </view>
+      <view style=' display: flex;flex-direction: row;align-items: center;'>
+        <image src="/resource/image/arrow-right.png" style="width: 14rpx; height: 20rpx;margin-left:10rpx" />
+      </view>    
+      </view>
+  </view>
+
+<button type="warn" class="save-btn" bindtap="getmoney">提现</button>

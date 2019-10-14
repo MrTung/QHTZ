@@ -1,8 +1,11 @@
-var api_host = "http://39.100.235.160:8011/admin";  
+// var api_host = "http://39.100.235.160:8011/admin";  
+
+var api_host = "https://apis.dzzky.com/admin";  
+
 
 module.exports = {
 
-  imgageHost:'http://39.100.235.160:8011',
+  imgageHost:'https://apis.dzzky.com',
 
   //上传文件的地址
   uploadurl: api_host + '/sys/file',
@@ -24,4 +27,24 @@ module.exports = {
 
   // 编辑实名认证信息 id  idCardNo  fileId   userName
   url_editidcard: api_host + '/wechat/userinfo/editidcard',
+
+  //获取订单列表 分销订单
+  url_allorderlist: api_host + "/getyzsalesmantrades",
+
+  //获取订单列表 自己订单
+  url_myallorderlist: api_host + "/salesman/order/list",
+
+  //获取客户列表
+  url_yzsalescustomers: api_host + "/getyzsalescustomers",
+
+   //获取小程序码
+  url_getwxacodeunlimit: api_host + "/wechat/getwxacodeunlimit",
+
+  //绑定用户关系
+  url_relationship: api_host + "/userinfo/relationship",
+
+ //获取客户列表
+  url_relationshiplist: api_host + "/userinfo/relationship/list/uid"
+
+
 };

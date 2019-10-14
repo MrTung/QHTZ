@@ -1,0 +1,31 @@
+
+<view class='listcell' hidden="{{!needbank}}">
+    <view class='address-box' bindtap="gotoaddbank">
+      <view style=' display: flex;flex-direction: row;align-items: center;padding-left:30rpx'>
+        <view class="arrow">请先添加提现银行卡 </view>
+      </view>
+      <view style=' display: flex;flex-direction: row;align-items: center;'>
+        <image src="/resource/image/arrow-right.png" style="width: 14rpx; height: 20rpx;margin-left:10rpx" />
+      </view>
+    </view>
+</view>
+
+
+<view class="pageview1">
+  <view class="contentview">
+    <text style="font-size:50rpx;">￥</text>
+    <input type="number" class="input" placeholder='请输入提现金额' name="exchangevalue"  value="{{exchangevalue}}" bindinput="bindKeyInput"/>
+    <view class="rightview">
+      <view bindtap="all" style="text-align:right;">全部转出</view> 
+      <text style="color:gray;font-size:25rpx;margin-top:20rpx;">可提现:￥{{balance}}</text>
+    </view>
+  </view>
+
+  <view style="width:100%;height:1rpx;background-color:lightgray"></view>
+  <text class="subtitle">每周每个银行卡提现最多三笔,单笔最低提现金额为10元，最高不超过1000元。提现处理时间:工作日9点到18点。节假日顺延。</text>
+
+  <button type="warn" class="save-btn" bindtap="sure">确认转出</button>
+
+</view>
+
+

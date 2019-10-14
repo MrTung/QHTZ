@@ -14,10 +14,12 @@
       </view>
     </view>
     <view class='imgview'>
-      <image  class="image" src="{{img1}}" mode="aspectFit" data-idx="1" bindtap="chooseImage"></image>
-      <image  class="image" src="{{img2}}" mode="aspectFit" data-idx="2" bindtap="chooseImage"></image>
+      <image  bindlongtap="longTap" bindtouchstart="touchStart" bindtouchend="touchEnd"  
+      class="image" src="{{img1}}"  data-url="{{img1}}" mode="aspectFit" data-idx="1" bindtap="multipleTap"></image>
+      <image  bindlongtap="longTap" bindtouchstart="touchStart" bindtouchend="touchEnd"
+       class="image" src="{{img2}}"  data-url="{{img2}}" mode="aspectFit" data-idx="2" bindtap="multipleTap"></image>
     </view>
-    <button type="warn" class='button' formType="submit"> 确认提交 </button>
+    <button hidden="{{userinfo.userStatus == 1}}" type="warn" class='button' formType="submit"> 确认提交 </button>
 
   </form>
 

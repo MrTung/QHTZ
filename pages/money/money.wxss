@@ -1,0 +1,120 @@
+.topview{
+  display: inline-block;
+  width: 100%;
+  height: 100rpx;
+  padding: 30rpx;
+}
+
+.money{
+  color: red;
+  font-size: 40rpx;
+  font-weight: bold;
+}
+
+.subtitle{
+  margin-top: 10rpx;
+  margin-left: 10rpx;
+  color: gray;
+}
+
+.listcell {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.address-box {
+  display: flex;
+  flex-direction: row;
+  box-sizing: border-box;
+  padding-right: 30rpx;
+  width: 100%;
+  margin-bottom: 2rpx;
+  font-size: 28rpx;
+  color: #000;
+  height: 100rpx;
+  line-height: 100rpx;
+  background-color: white;
+  position: relative;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.address-box .arrow {
+  /* background: url(https://cdn.it120.cc/images/weappshop/arrow-right.png) no-repeat 675rpx center;
+  background-size: 15rpx auto;
+  text-align: left; */
+}
+
+.right-text {
+  text-align: right;
+  font-size: 24rpx;
+  color: #666;
+  padding-left: 20rpx;
+}
+
+.rowArrow {
+  height: 55rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff;
+  padding: 20rpx;
+  margin-top: 1px;
+}
+
+.row-label {
+  font-size: 28rpx;
+  color: #000;
+}
+
+.order-box {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 190rpx;
+  background-color: white;
+}
+
+.arrow {
+  display: flex;
+  flex-direction: row;
+}
+
+.bottomview {
+  width: 100%;
+  height: 100rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.iconview {
+  width: 100rpx;
+  height: 100rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.address-box .badgeview{
+  right:auto;
+  left:195rpx;
+}
+.coupon-box  .badgeview{
+  right:auto;
+  left:170rpx;
+}
+
+.save-btn, .cancel-btn {
+  width: 690rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  margin-top: 30rpx;
+  border-radius: 6rpx;
+  box-sizing: border-box;
+}

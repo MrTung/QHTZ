@@ -1,0 +1,11 @@
+<view class="container">
+
+    <image  src="/resource/image/codebg.jpg"  class='imgcodebg'  />
+
+    <image wx:if="{{imageCode}}" data-url="{{imageCode}}"  class='imgcode'  bindtap="handleImagePreview" src='{{imageCode}}'/>
+
+    <canvas class='canvans' canvas-id="myCanvas"></canvas>
+
+    <button type="warn" class="share-btn" bindtap="share">保存</button>
+
+</view>

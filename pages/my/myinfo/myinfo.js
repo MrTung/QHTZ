@@ -59,6 +59,8 @@ Page({
 
 //提交表单
   formSubmit: function (e) {
+
+    let that = this;
     this.setData({
       wxNum: e.detail.value.wxNum,
       bankName: e.detail.value.bankName,
@@ -91,6 +93,10 @@ Page({
         data: res,
       });
 
+      util.getuserinfo();
+
+      wx.navigateBack();
+
     });
   },
 
@@ -98,7 +104,7 @@ Page({
   getcode: function () {
 
     let that = this;
-    if(this.data.mobile.length != 11)
+    if (!this.data.mobile || this.data.mobile.length != 11)
      return wx.showToast({
         title: '请输入有效手机号码',
         icon: 'none',
@@ -141,6 +147,12 @@ Page({
     };
 
     util.requestLoading(tmUrl.url_editphone, requestParams, '正在绑定', function (res) {
+      console.log(res);
+      // if(res.)
+      // return wx.showToast({
+      //   title: '绑定失败',
+      //   icon: 'none',
+      // })
         wx.showModal({
           title: '提示',
           content: '绑定成功',
@@ -156,6 +168,8 @@ Page({
           key: 'userinfo',
           data: res,
         });
+
+        app.globalData.userInfo = res;
      
     });
   }

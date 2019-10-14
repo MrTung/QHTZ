@@ -34,13 +34,17 @@
   flex-direction: row;
 }
 
+.topview-text{
+  margin-top: 20rpx;
+}
+
 .topview-item{
-  margin-top: 45rpx;
-  height: 55rpx;
+  width: 33.33%;
+  margin-top: 15rpx;
+  height: 100%;
   font-size: 15px;
   display: flex;
   flex-direction: column;
-  flex: 1;
   color: white;
   align-items: center;
 }
@@ -48,11 +52,7 @@
 .topview-item-money{
   font-weight: bold;
   margin-top: 20px;
-  height: 40px;
   font-size: 18px;
-  display: flex;
-  flex-direction: column;
-  flex: 1;
   color: white;
   align-items: center;
   margin-bottom: 5px;

@@ -7,32 +7,35 @@
 
   <view class='listcell'>
     <view class='address-box' bindtap="myinfo" style='margin-top:15rpx;'>
-      <view style=' display: flex;flex-direction: row;align-items: center;'>
-        <view style='opacity: {{(!myPageData.memberFavoriteProductCount || myPageData.memberFavoriteProductCount < 1) ? 0 :1}};'  class='badgeview'>{{myPageData.memberFavoriteProductCount}}</view>
-        <view style='width:30rpx;height:1rpx;'> </view>
+      <view style=' display: flex;flex-direction: row;align-items: center;padding-left:30rpx'>
         <image src="/resource/image/myself/my_favorite.png" style="width: 50rpx; height: 50rpx;margin-right:10rpx" />
         <view class="arrow">个人信息 </view>
       </view>
-      <image src="/resource/image/arrow-right.png" style="width: 14rpx; height: 20rpx;margin-left:10rpx" />
+      <view style=' display: flex;flex-direction: row;align-items: center;'>
+        <view style="color:red;"></view>
+        <image src="/resource/image/arrow-right.png" style="width: 14rpx; height: 20rpx;margin-left:10rpx" />
+      </view>
     </view>
     <view class='address-box coupon-box' bindtap="realname">
-      <view style=' display: flex;flex-direction: row;align-items: center;'>
-        <view style='opacity: {{(!myPageData.couponCodeCount || myPageData.couponCodeCount < 1) ? 0 :1}};'  class='badgeview'>{{myPageData.couponCodeCount}}</view>
-        <view style='width:30rpx;height:1rpx;'></view>
+      <view style=' display: flex;flex-direction: row;align-items: center;padding-left:30rpx'>
         <image src="/resource/image/myself/my_coupon.png" style="width: 50rpx; height: 50rpx;margin-right:10rpx" />
         <view class="arrow">实名认证</view>
       </view>
-      <image src="/resource/image/arrow-right.png" style="width: 14rpx; height: 20rpx;margin-left:10rpx" />
+      <view style=' display: flex;flex-direction: row;align-items: center;'>
+        <view style="color:red;">{{statusname}}</view>
+        <image src="/resource/image/arrow-right.png" style="width: 14rpx; height: 20rpx;margin-left:10rpx" />
+      </view>    
     </view>
     <!-- <view class='address-box' bindtap="addressList">
       <view style=' display: flex;flex-direction: row;align-items: center;'>
         <view style='width:30rpx;height:1rpx;'> </view>
         <image src="/resource/image/myself/my_address.png" style="width: 50rpx; height: 50rpx;margin-right:10rpx" />
-        <view class="arrow">账号与安全</view>
+        <view class="arrow">我的顾问</view>
       </view>
-      <image src="/resource/image/arrow-right.png" style="width: 14rpx; height: 20rpx;margin-left:10rpx" />
+       <view style=' display: flex;flex-direction: row;align-items: center;'>
+        <view style="color:red;">{{masterInfo}}</view>
+      </view>  
     </view> -->
-   
   </view>
 
 </view>

@@ -1,0 +1,39 @@
+
+
+.cellview {
+  display: flex;
+  height: 80rpx;
+  background-color: white;
+  flex-direction: row;
+  align-items: top;
+  vertical-align: center;
+  border-bottom-color: black;
+  border-bottom-width: 1px;
+  margin: 20rpx;
+  padding: 10rpx;
+  border-radius: 10rpx;
+}
+
+.cellrightview {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  margin-left: 20rpx;
+  position: relative;
+}
+
+.cellText {
+  font-style: normal;
+  font-size: 30rpx;
+  color: gray;
+  overflow: hidden;
+  margin-top: 20rpx;
+}
+
+.cell-left-view {
+  align-items:center;
+  display:flex;
+}
+
+

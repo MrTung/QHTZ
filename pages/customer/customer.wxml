@@ -1,0 +1,14 @@
+<view hidden='{{dataProvider.length > 0}}' style=' width: 100%;color:#666;text-align: center;margin-top:20rpx;'>您暂时还没有客户</view>
+<scroll-view scroll-y enable-back-to-top scroll-top="{{scrollTop}}">
+  <view wx:key="id" wx:for="{{dataProvider}}" wx:for-index="idx" wx:for-item="prdItem" bindtap="goodsclick" data-id="{{prdItem.id}}">
+    <view class="cellview">
+      <view class="cell-left-view">
+        <image  style="width: 80rpx; height: 80rpx;  background-color: #eeeeee;"  mode="aspectFill" src="{{prdItem.avatar}}"></image>
+      </view>
+      <view class="cellrightview">
+        <text class="cellText">{{prdItem.nickname}}</text>
+      </view>
+    </view>
+  </view>
+</scroll-view>
+

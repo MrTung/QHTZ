@@ -8,6 +8,15 @@ const app = getApp()
 
 Page({
   data: {
+    // 触摸开始时间
+    touchStartTime: 0,
+    // 触摸结束时间
+    touchEndTime: 0,
+    // 最后一次单击事件点击发生时间
+    lastTapTime: 0,
+    // 单击事件点击后要触发的函数
+    lastTapTimeoutFunc: null, 
+
     userinfo:null,
     userName: '',
     idCardNo: '',
@@ -69,10 +78,60 @@ Page({
 
   },
 
-  chooseImage(e) {
+  /// 长按
+  longTap: function (e) {
+    this.chooseImage(e);
+  },
 
-    let that = this;
+  /// 按钮触摸开始触发的事件
+  touchStart: function (e) {
+    this.touchStartTime = e.timeStamp
+  },
+
+  /// 按钮触摸结束触发的事件
+  touchEnd: function (e) {
+    this.touchEndTime = e.timeStamp
+  },
+
+  /// 单击、双击
+  multipleTap: function (e) {
+    var that = this
+    // 控制点击事件在350ms内触发，加这层判断是为了防止长按时会触发点击事件
+    if (that.touchEndTime - that.touchStartTime < 350) {
+      // 当前点击的时间
+      var currentTime = e.timeStamp
+      var lastTapTime = that.lastTapTime
+      // 更新最后一次点击时间
+      that.lastTapTime = currentTime
+
+      // 如果两次点击时间在300毫秒内，则认为是双击事件
+      if (currentTime - lastTapTime < 300) {
+        // 成功触发双击事件时，取消单击事件的执行
+        clearTimeout(that.lastTapTimeoutFunc);
+      } else {
+        // 单击事件延时300毫秒执行，这和最初的浏览器的点击300ms延时有点像。
+        that.lastTapTimeoutFunc = setTimeout(function () {
+        
+          const idx = e.target.dataset.idx
+
+          if (idx == '1' && that.data.imgid1.length > 0)
+            return that.handleImagePreview(e);
+          else if (idx == '2' && that.data.imgid2.length > 0)
+            return that.handleImagePreview(e);
+
+          that.chooseImage(e);
+
+        }, 100);
+      }
+    }
+  },
+
+  chooseImage(e) {
+   
+    var that = this
+
     const idx = e.target.dataset.idx
+
     wx.chooseImage({
       sizeType: ['original', 'compressed'],  //可选择原图或压缩后的图片
       sourceType: ['album', 'camera'], //可选择性开放访问相册、相机
@@ -93,6 +152,7 @@ Page({
               
               that.data.imgid1 = result.data[0];
               
+              util.getuserinfo();
             }
           })
         }
@@ -109,7 +169,10 @@ Page({
             success(res) {
               const result = JSON.parse(res.data);
               
-              that.data.imgid2 = result.data[0];
+              that.data.imgid2 = result.data[0]; 
+              
+              util.getuserinfo();
+
             }
           })
         }
@@ -165,9 +228,13 @@ Page({
 
   //调用接口
   submitData() {
+    var that = this;
+
+    var getAppInfo = app.globalData.userInfo;
+
 
     let requestParams = {
-      "id": this.data.userinfo.id,
+      "id": getAppInfo.id,
       "idCardNo": this.data.idCardNo,
       "fileId": this.data.imgid1 + ',' + this.data.imgid2,
       "userName": this.data.userName,
@@ -179,7 +246,44 @@ Page({
           content: '提交成功',
           showCancel: false
         })
+
+
+      that.getuserinfo();
+
+      wx.navigateBack();
+
      
     });
+  },
+
+
+//更新用户信息
+  getuserinfo(){
+      wx.login({
+        success: function (res) {
+          console.log(res)
+          if (res.code) {
+            wx.request({
+              url: tmUrl.url_getuserinfo,
+              data: {
+                code: res.code,
+              },
+              success(v) {
+                console.log(v)
+
+                wx.setStorage({
+                  key: 'userinfo',
+                  data: v.data.data[0],
+                });
+
+                app.globalData.userInfo = v.data.data[0];
+                console.log('设置userinfo成功');
+              }
+            })
+          } else {
+            console.log('登录失败！' + res.errMsg)
+          }
+        }
+      });
   }
 })

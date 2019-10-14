@@ -2,19 +2,19 @@
 <view class="container">
   <view class="topview">
 
-    <view class="topview-item">   
-      <text class="topview-item-money">100</text>
-      <text class="topview-item">今日收益</text>
+    <view class="topview-item" >   
+      <text class="topview-item-money">0.00</text>
+      <text class="topview-text">今日收益</text>
     </view>
 
     <view class="topview-item">   
-      <text class="topview-item-money">100</text>
-      <text class="topview-item">本月收益</text>
+      <text class="topview-item-money">0.00</text>
+      <text class="topview-text">本月收益</text>
     </view>
 
     <view class="topview-item">   
-      <text class="topview-item-money">100</text>
-      <text class="topview-item">总收益</text>
+      <text class="topview-item-money">0.00</text>
+      <text class="topview-text">总收益</text>
     </view>
 
   </view>
@@ -24,22 +24,22 @@
   </view>
 
   <view class='shortcut-container'>
-      <view class="shortcut-view">
+      <view class="shortcut-view" bindtap="gotoCustomer">
         <image class="shortcut-icon" mode="aspectFill" src="/resource/image/ziyuan_1.png"></image>
         <text class="shortcut-title">我的客户</text>
       </view>
 
-       <view class="shortcut-view">
+       <view class="shortcut-view" bindtap="gotoOrder">
         <image class="shortcut-icon" mode="aspectFill" src="/resource/image/ziyuan.png"></image>
         <text class="shortcut-title">我的订单</text>
       </view>
 
-       <view class="shortcut-view">
+       <view class="shortcut-view" bindtap="gotomoney">
         <image class="shortcut-icon" mode="aspectFill" src="/resource/image/caiwubaobiao.png"></image>
         <text class="shortcut-title">财务管理</text>
       </view>
 
-       <view class="shortcut-view">
+       <view class="shortcut-view" bindtap="gotoinvite">
         <image class="shortcut-icon" mode="aspectFill" src="/resource/image/yaoqingmatianchong.png"></image>
         <text class="shortcut-title">邀请别人</text>
       </view>

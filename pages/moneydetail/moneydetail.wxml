@@ -1,0 +1,1 @@
+  <view  hidden='{{dataProvider.length > 0}}' style=' width: 100%;color:#666;text-align: center;margin-top:20rpx;'>暂无数据</view>

@@ -35,8 +35,7 @@ App({
               that.globalData.userInfo = v.data.data[0];
               console.log('设置userinfo成功');
 
-              
-
+              that.releate();
             }
           })
         } else {
@@ -44,7 +43,43 @@ App({
         }
       }
     });
-
   },
+
+  //绑定用户关系
+  releate: function () {
+    let studentId = this.globalData.userInfo.id;
+    let masterId;
+
+    //从本地获取推广id
+    wx.getStorage({
+      key: 'masterId',
+      success: function (res) {
+        masterId = res.data;
+
+        //如果存在id,则绑定用户关系
+        if (studentId && masterId && studentId != masterId) {
+          let that = this;
+          wx.request({
+            url: tmUrl.url_relationship,
+            method:'POST',
+            header: {
+              'content-type': 'application/x-www-form-urlencoded;charset=UTF-8' 
+            },
+            data: {
+              studentId: studentId,
+              masterId: masterId
+            },
+            success: function (res) {
+              wx.removeStorage({
+                key: 'masterId',
+                success: function(res) {},
+              })
+            }
+          })
+        }
+      },
+    })
+    
+  }
  
 })
